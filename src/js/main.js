@@ -14,8 +14,10 @@ function run() {
   });
 
   $demo.on('ended', () => {
-    background.play();
     $demo.hide();
+
+    background.play();
+    $background.show();
   });
 
   socket.on('new_msg', function(data) {
@@ -34,25 +36,28 @@ function run() {
 }
 
 function playDemo() {
-  background.pause();
+  console.log('playing demo');
   $background.hide();
+  background.pause();
 
-  $demo.show();
   demo.play();
+  $demo.show();
 }
 
 function pauseDemo() {
+  console.log('pausing demo');
   demo.pause();
 }
 
 function stopDemo() {
-  $background.show();
-  background.currentTime = 0;
-  background.play();
-
+  console.log('stopping demo');
   $demo.hide();
   demo.pause();
   demo.currentTime = 0;
+
+  background.currentTime = 0;
+  background.play();
+  $background.show();
 }
 
 $(window).on('load', function() {

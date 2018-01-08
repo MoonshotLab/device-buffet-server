@@ -5,7 +5,7 @@ const io = require('./../app').io;
 
 router.get('/:command', (req, res) => {
   try {
-    console.log(req.params.command);
+    console.log('video command:', req.params.command);
 
     io.emit('new_msg', {
       msg: req.params.command

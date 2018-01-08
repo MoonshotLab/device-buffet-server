@@ -16,6 +16,7 @@ function run() {
   $demo.on('ended', () => {
     $demo.hide();
 
+    background.currentTime = 0;
     background.play();
     $background.show();
   });

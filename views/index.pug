@@ -2,8 +2,13 @@ extends layout.pug
 
 block content
   div.video-container
-    video#background(src='https://d32vnycoqqt3qz.cloudfront.net/lyrebird-loop.webm')
-    video#demo(src='https://d32vnycoqqt3qz.cloudfront.net/mitsuku-loop.webm')
+    video#background
+      source(src='https://d32vnycoqqt3qz.cloudfront.net/lyrebird-loop.webm' type='video/webm')
+      source(src='https://d32vnycoqqt3qz.cloudfront.net/lyrebird-loop.mp4' type='video/mp4')
+    video#demo
+      source(src='https://d32vnycoqqt3qz.cloudfront.net/mitsuku-loop.webm' type='video/webm')
+      source(src='https://d32vnycoqqt3qz.cloudfront.net/mitsuku-loop.mp4' type='video/mp4')
+      
 
 block footer_scripts
   script(src='js/lib/jquery.min.js')
